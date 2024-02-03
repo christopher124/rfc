@@ -1,0 +1,11 @@
+{
+  "name": "rfc",
+  "version": "1.0.0",
+  "description": "valida rfc",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "christopher uriel sosa garcia",
+  "license": "ISC"
+}

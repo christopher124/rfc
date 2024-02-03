@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Validador RFC</title>
+    <script>
+      /**
+       * Función para validar un RFC (Registro Federal de Contribuyentes) en México.
+       * @param {string} rfc - El RFC a validar.
+       * @returns {boolean} - True si el RFC es válido, False si es inválido.
+       */
+      function validarRFC(rfc) {
+        // Expresión regular para validar el RFC.
+        const regex =
+          /^[A-Z&Ñ]{3,4}[0-9]{2}(0[1-9]|1[012])(0[1-9]|[12][0-9]|3[01])[A-Z0-9]{2}[0-9A]$/;
+
+        // Verificar si el RFC cumple con la expresión regular.
+        return regex.test(rfc);
+      }
+
+      /**
+       * Función para manejar la validación del RFC al hacer clic en el botón.
+       */
+      function validar() {
+        // Obtener el valor del RFC desde el input y convertir a mayúsculas.
+        const rfcInput = document.getElementById("rfc").value.toUpperCase();
+
+        // Validar el RFC.
+        const resultado = validarRFC(rfcInput);
+
+        // Mostrar un mensaje indicando si el RFC es válido o no.
+        const mensaje = resultado ? "RFC válido" : "RFC inválido";
+        alert(mensaje);
+      }
+    </script>
+  </head>
+  <body>
+    <label for="rfc">RFC:</label>
+    <!-- Input para ingresar el RFC, con un límite de 13 caracteres. -->
+    <input type="text" id="rfc" maxlength="13" />
+
+    <!-- Botón que activa la función de validación al hacer clic. -->
+    <button onclick="validar()">Validar RFC</button>
+  </body>
+</html>
